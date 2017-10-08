@@ -7,9 +7,9 @@ public class Arithmetic {
             return true;
         } else return false;
     }
-    public int max(int[] a) {
-        int max = 0;
-        for(int element : a ) {
+    public long max(int[] a) {
+        long max = 0;
+        for(long element : a ) {
             if(element > max) {
                 max = element;
             }
