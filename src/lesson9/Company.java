@@ -15,6 +15,7 @@ public class Company {
     public String getName() {
         return name;
     }
+
     public String getCountryFounded() {
         return countryFounded;
     }
