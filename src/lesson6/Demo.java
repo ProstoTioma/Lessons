@@ -17,6 +17,7 @@ public class Demo {
         carObject.changeOwner("Test");
         System.out.println(carObject.ownerName);
 
+
         Car carObject2 = null;
         System.out.println(carObject2);
 
