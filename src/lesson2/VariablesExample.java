@@ -20,7 +20,6 @@ public class VariablesExample {
 
         //declaration
         int test;
-
         //initialization
         test = 1500;
 

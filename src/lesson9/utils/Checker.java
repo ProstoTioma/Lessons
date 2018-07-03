@@ -18,8 +18,9 @@ public class Checker {
 //        if(companyName == "Google" || companyName == "Amazon")
 //            return false;
 //        return true;
-        if (companyNameValidatedCount > 10)
+        if (companyNameValidatedCount > 10) {
             return false;
+        }
         companyNameValidatedCount++;
         return companyName != "Google" && companyName != "Amazon";
     }

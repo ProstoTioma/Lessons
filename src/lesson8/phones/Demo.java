@@ -5,5 +5,6 @@ public class Demo {
         IPhone iPhone = new IPhone(110, 10.0, "China", true);
         iPhone.deleteIPhoneFromDb();
         iPhone.orderPhone();
+
     }
 }

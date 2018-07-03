@@ -9,8 +9,9 @@ public class CheckingAccount extends Account {
     }
 
     void withdraw(int amount) {
-        if(amount > limitOFExpenses)
+        if(amount > limitOFExpenses) {
             return;
+        }
         moneyAmount -= amount;
     }
 }

@@ -6,6 +6,7 @@ public class Ad extends BaseEntity{
     int price;
     Date dateCreated;
 
+
     public Ad(long id, int price) {
         super(id);
         this.price = price;
