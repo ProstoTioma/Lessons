@@ -31,7 +31,7 @@ public class Room {
         return persons;
     }
 
-    public Date getDateAvaibleFrom() {
+    public Date getDateAvailableFrom() {
         return dateAvailableFrom;
     }
 
@@ -47,7 +47,7 @@ public class Room {
         this.price = price;
     }
 
-    public void setDateAvaibleFrom(Date dateAvaibleFrom) {
-        this.dateAvailableFrom = dateAvaibleFrom;
+    public void setDateAvaibleFrom(Date dateAvailableFrom) {
+        this.dateAvailableFrom = dateAvailableFrom;
     }
 }
