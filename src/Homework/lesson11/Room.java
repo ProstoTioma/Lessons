@@ -10,11 +10,11 @@ public class Room {
     private String hotelName;
     private String cityName;
 
-    public Room(long id, int price, int persons, Date dateAvaibleFrom, String hotelName, String cityName) {
+    public Room(long id, int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
         this.id = id;
         this.price = price;
         this.persons = persons;
-        this.dateAvailableFrom = dateAvaibleFrom;
+        this.dateAvailableFrom = dateAvailableFrom;
         this.hotelName = hotelName;
         this.cityName = cityName;
     }
