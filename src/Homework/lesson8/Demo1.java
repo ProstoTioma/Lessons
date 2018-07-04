@@ -1,6 +1,10 @@
-package Homework.lesson81;
+package Homework.lesson8;
 
-public class Demo {
+import Homework.lesson8.Course;
+import Homework.lesson8.SpecialStudent;
+import Homework.lesson8.Student;
+
+public class Demo1 {
     public Student createHighestParent() {
         Student student = new Student("Artem", "Yermolenko", 10, new Course[]{} );
         return student;

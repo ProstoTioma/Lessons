@@ -1,4 +1,4 @@
-package Homework.lesson81;
+package Homework.lesson8;
 
 public class CollegeStudent extends Student{
     String collegeName;
