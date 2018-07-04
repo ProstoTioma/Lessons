@@ -47,7 +47,7 @@ public class Room {
         this.price = price;
     }
 
-    public void setDateAvaibleFrom(Date dateAvailableFrom) {
+    public void setDateAvailableFrom(Date dateAvailableFrom) {
         this.dateAvailableFrom = dateAvailableFrom;
     }
 }
