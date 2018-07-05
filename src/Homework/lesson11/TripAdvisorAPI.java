@@ -2,7 +2,6 @@ package Homework.lesson11;
 
 public class TripAdvisorAPI implements API{
     private Room[] rooms;
-    private Room[] rooms1;
 
 
     public TripAdvisorAPI(Room[] rooms) {
@@ -11,6 +10,7 @@ public class TripAdvisorAPI implements API{
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
+        Room[] rooms1;
         for (Room room : rooms) {
             if (persons >= persons - 1 && persons <= persons + 1) {
                 if(persons == room.getPersons())
@@ -20,7 +20,7 @@ public class TripAdvisorAPI implements API{
                 rooms1 = rooms;
             }
         }
-        return rooms1;
+        return rooms;
     }
 
     @Override

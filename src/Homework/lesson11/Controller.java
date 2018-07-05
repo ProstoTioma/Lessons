@@ -8,6 +8,8 @@ public class Controller {
     }
 
     public Room[] requestRooms(int price, int persons, String city, String hotel) {
+        for(API api : apis) {
+        }
         return null;
     }
     public Room[] check(API api1, API api2) {
