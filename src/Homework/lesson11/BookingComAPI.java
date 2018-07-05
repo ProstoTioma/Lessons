@@ -2,6 +2,7 @@ package Homework.lesson11;
 
 public class BookingComAPI implements API {
     private Room[] rooms;
+    private Room[] rooms1;
 
 
     public BookingComAPI(Room[] rooms) {
@@ -19,13 +20,13 @@ public class BookingComAPI implements API {
                     if(city == room.getCityName()) {
                         if(hotel == room.getHotelName()) {
                             if(price == room.getPrice())
-                            System.out.println(price + " " + persons + " " + city + " " + hotel);
+                            rooms1 = rooms;
                         }
                     }
                 }
             }
         }
-        return rooms;
+        return rooms1;
     }
 
     @Override

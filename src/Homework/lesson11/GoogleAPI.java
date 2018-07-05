@@ -2,6 +2,7 @@ package Homework.lesson11;
 
 public class GoogleAPI implements API {
     private Room[] rooms;
+    private Room[] rooms1;
 
     public GoogleAPI(Room[] rooms) {
         this.rooms = rooms;
@@ -14,10 +15,10 @@ public class GoogleAPI implements API {
                 if (persons == room.getPersons())
                     if(city == room.getCityName())
                         if(hotel == room.getHotelName())
-                    System.out.println(price + " " + persons + " " + city + " " + hotel);
+                    rooms1 = rooms;
             }
         }
-        return rooms;
+        return rooms1;
     }
 
     @Override
