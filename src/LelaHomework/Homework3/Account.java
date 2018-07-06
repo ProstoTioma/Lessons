@@ -10,7 +10,7 @@ public class Account {
     }
 
 
-    public double payMoney(double money) {
+    public int payMoney(int money) {
         System.out.println("How much money do you want to pay?");
         System.out.println("Your account balance is" + " " + accountBalance);
 
@@ -21,7 +21,7 @@ public class Account {
         return accountBalance;
     }
 
-    public double withdrawMoney(double money) {
+    public int withdrawMoney(int money) {
         System.out.println("How much money do you want to withdraw?");
         System.out.println("Your account balance is" + " " + accountBalance);
         if (accountBalance - money <= 0) {
