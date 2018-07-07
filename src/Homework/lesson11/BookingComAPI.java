@@ -14,7 +14,7 @@ public class BookingComAPI implements API {
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        Room[] array = new Room[1];
+        Room[] array = new Room[0];
         for (Room room : rooms) {
 
             //if(room.getPrice() == price)

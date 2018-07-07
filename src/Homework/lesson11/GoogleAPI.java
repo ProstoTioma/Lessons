@@ -9,16 +9,32 @@ public class GoogleAPI implements API {
 
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        Room[] rooms1;
+        Room[] rooms1 = new Room[1];
         for (Room room : rooms) {
             if (price == room.getPrice()) {
                 if (persons == room.getPersons())
                     if(city == room.getCityName())
                         if(hotel == room.getHotelName())
-                    rooms1 = rooms;
+                    rooms1 = addRoom(rooms1, room);
             }
         }
         return rooms;
+    }
+    private Room[] addRoom(Room[] rooms, Room room) {
+        for(int a = 0; a < rooms.length; a++) {
+            if(rooms[a] == null) {
+                rooms[a] = room;
+                return rooms;
+            }
+
+        }
+        Room[] array = new Room[rooms.length + 1];
+        for(int b = 0; b < rooms.length; b++) {
+            array[b] = rooms[b];
+        }
+        array[rooms.length] = room;
+
+        return array;
     }
 
     @Override
