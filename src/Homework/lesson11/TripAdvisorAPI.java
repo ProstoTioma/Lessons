@@ -27,7 +27,7 @@ public class TripAdvisorAPI implements API{
         }
 
 
-        return rooms;
+        return res;
     }
 
 //    private Room[] addRoom(Room[] rooms, Room room) {

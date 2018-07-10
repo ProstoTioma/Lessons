@@ -17,19 +17,22 @@ public class GoogleAPI implements API {
                         if (hotel == room.getHotelName())
                             count++;
             }
+        }
             Room[] res = new Room[count];
             int index = 0;
-            if (price == room.getPrice()) {
-                if (persons == room.getPersons())
-                    if (city == room.getCityName())
-                        if (hotel == room.getHotelName()) {
-                            res[index] = room;
-                            index++;
-                        }
+            for(Room room : rooms) {
+                if (price == room.getPrice()) {
+                    if (persons == room.getPersons())
+                        if (city == room.getCityName())
+                            if (hotel == room.getHotelName()) {
+                                res[index] = room;
+                                index++;
+                            }
+                }
             }
-        }
 
-        return rooms;
+
+        return res;
     }
 //    private Room[] addRoom(Room[] rooms, Room room) {
 //        for(int a = 0; a < rooms.length; a++) {
