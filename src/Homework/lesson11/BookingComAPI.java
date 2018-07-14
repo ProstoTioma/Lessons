@@ -4,7 +4,9 @@ package Homework.lesson11;
 public class BookingComAPI implements API {
     private Room[] rooms;
 
-
+    public Room[] getRooms() {
+        return rooms;
+    }
 
     public BookingComAPI(Room[] rooms) {
         this.rooms = rooms;

@@ -3,6 +3,10 @@ package Homework.lesson11;
 public class GoogleAPI implements API {
     private Room[] rooms;
 
+    public Room[] getRooms() {
+        return rooms;
+    }
+
     public GoogleAPI(Room[] rooms) {
         this.rooms = rooms;
     }

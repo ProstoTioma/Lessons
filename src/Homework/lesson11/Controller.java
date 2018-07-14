@@ -42,6 +42,24 @@ public class Controller {
 
     }
     public Room[] check(API api1, API api2) {
-        return null;
+//        BookingComAPI bookingComAPI = new BookingComAPI(rooms);
+//        TripAdvisorAPI tripAdvisorAPI = new TripAdvisorAPI(rooms);
+//        GoogleAPI googleAPI = new GoogleAPI(rooms);
+        int count = 0;
+
+        for(Room room : rooms) {
+            if(api1.findRooms(room.getPrice(), room.getPersons(), room.getCityName(), room.getHotelName()) == api2.findRooms(room.getPrice(), room.getPersons(), room.getCityName(), room.getHotelName())) {
+                count++;
+            }
+        }
+        Room[] res = new Room[count];
+        int index = 0;
+        for(Room room : rooms) {
+            if(api1.findRooms(room.getPrice(), room.getPersons(), room.getCityName(), room.getHotelName()) == api2.findRooms(room.getPrice(), room.getPersons(), room.getCityName(), room.getHotelName())) {
+                res[index] = room;
+                index++;
+            }
+        }
+        return res;
     }
 }
