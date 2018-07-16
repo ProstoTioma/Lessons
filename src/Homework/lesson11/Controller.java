@@ -46,16 +46,15 @@ public class Controller {
 //        TripAdvisorAPI tripAdvisorAPI = new TripAdvisorAPI(rooms);
 //        GoogleAPI googleAPI = new GoogleAPI(rooms);
         int count = 0;
-
         for(Room room : rooms) {
-            if(api1.findRooms(room.getPrice(), room.getPersons(), room.getCityName(), room.getHotelName()) == api2.findRooms(room.getPrice(), room.getPersons(), room.getCityName(), room.getHotelName())) {
+            if(api1.getAll() == api2.getAll()) {
                 count++;
             }
         }
         Room[] res = new Room[count];
         int index = 0;
         for(Room room : rooms) {
-            if(api1.findRooms(room.getPrice(), room.getPersons(), room.getCityName(), room.getHotelName()) == api2.findRooms(room.getPrice(), room.getPersons(), room.getCityName(), room.getHotelName())) {
+            if(api1.getAll() == api2.getAll()) {
                 res[index] = room;
                 index++;
             }
