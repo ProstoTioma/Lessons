@@ -3,9 +3,6 @@ package Homework.lesson11;
 public class Controller {
     private API[] apis;
     private Room[] rooms;
-//    BookingComAPI bookingComAPI;
-//    TripAdvisorAPI tripAdvisorAPI;
-//    GoogleAPI googleAPI;
 
     public Controller(API[] apis) {
         this.apis = apis;
@@ -42,9 +39,6 @@ public class Controller {
 
     }
     public Room[] check(API api1, API api2) {
-//        BookingComAPI bookingComAPI = new BookingComAPI(rooms);
-//        TripAdvisorAPI tripAdvisorAPI = new TripAdvisorAPI(rooms);
-//        GoogleAPI googleAPI = new GoogleAPI(rooms);
         int count = 0;
         for(Room room : rooms) {
             if(api1.getAll() == api2.getAll()) {
@@ -59,6 +53,13 @@ public class Controller {
                 index++;
             }
         }
-        return res;
+        return rooms;
     }
+    public API[] cheking(API api1, API api2) {
+        if(api1.getAll() == api2.getAll()) {
+            
+        }
+        return apis;
+    }
+
 }

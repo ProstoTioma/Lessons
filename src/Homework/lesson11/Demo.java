@@ -45,6 +45,5 @@ public class Demo {
         for (Room room1 : room) {
             System.out.println(room1.getId() + " " + room1.getPrice() + " " + room1.getPersons());
         }
-
     }
 }

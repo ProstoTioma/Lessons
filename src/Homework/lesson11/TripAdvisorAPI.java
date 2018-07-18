@@ -3,9 +3,6 @@ package Homework.lesson11;
 public class TripAdvisorAPI implements API{
     private Room[] rooms;
 
-    public Room[] getRooms() {
-        return rooms;
-    }
 
     public TripAdvisorAPI(Room[] rooms) {
         this.rooms = rooms;
