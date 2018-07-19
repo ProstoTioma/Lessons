@@ -40,9 +40,11 @@ public class Controller {
     }
     public Room[] check(API api1, API api2) {
         int count = 0;
+
         for(Room room : rooms) {
             if(api1.getAll() == api2.getAll()) {
                 count++;
+
             }
         }
         Room[] res = new Room[count];
@@ -50,16 +52,22 @@ public class Controller {
         for(Room room : rooms) {
             if(api1.getAll() == api2.getAll()) {
                 res[index] = room;
+
                 index++;
             }
         }
-        return rooms;
+        return res;
     }
-    public API[] cheking(API api1, API api2) {
-        if(api1.getAll() == api2.getAll()) {
-            
+
+    int[] check(int[] array1, int[] array2) {
+        int count = 0;
+        if(array1 == array2) {
+            count++;
         }
-        return apis;
+        int[] res = new int[count];
+
+
+        return res;
     }
 
 }
