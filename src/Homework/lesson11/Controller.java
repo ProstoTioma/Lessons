@@ -59,15 +59,22 @@ public class Controller {
         return res;
     }
 
-    int[] check(int[] array1, int[] array2) {
+    static int[] check(int[] array1, int[] array2) {
         int count = 0;
-        if(array1 == array2) {
-            count++;
+        for(int el : array1) {
+            if (array1[el] == array2[el]) {
+                count++;
+            }
         }
         int[] res = new int[count];
-
+        int index = 0;
+        for(int el : array1) {
+            if (array1[el] == array2[el]) {
+                res[index] = el;
+                index++;
+            }
+        }
 
         return res;
     }
-
 }
