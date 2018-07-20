@@ -37,13 +37,31 @@ public class Demo {
         rooms[0] = new Room(1, 100, 3, new Date(), "Lawandowe Zgórze", "Paris");
         rooms[1] = new Room(2, 100, 4, new Date(), "Lawandowe Zgórze", "Paris");
         rooms[2] = new Room(3, 700, 1, new Date(), "Elite Club", "NewYork");
-        rooms[3] = new Room(4, 1200, 10, new Date(), "Elite Hotel", "LasVegas");
+        rooms[3] = new Room(4, 30, 5, new Date(), "Hotel", "Kiev");
 
         GoogleAPI googleAPI = new GoogleAPI(rooms);
 
-        Room[] room = googleAPI.findRooms(100, 3, "Paris", "Lawandowe Zgórze");
-        for (Room room1 : room) {
-            System.out.println(room1.getId() + " " + room1.getPrice() + " " + room1.getPersons());
+//        Room[] room = googleAPI.findRooms(100, 3, "Paris", "Lawandowe Zgórze");
+//        for (Room room1 : room) {
+//            System.out.println(room1.getId() + " " + room1.getPrice() + " " + room1.getPersons());
+//        }
+
+
+        Room[] rooms1 = new Room[4];
+        rooms1[0] = new Room(1, 30, 5, new Date(), "Hotel", "Kiev");
+        rooms1[1] = new Room(2, 100, 4, new Date(), "Lawandowe Zgórze", "Paris");
+        rooms1[2] = new Room(3, 7060, 1, new Date(), "Elite Club", "NewYork");
+        rooms1[3] = new Room(4, 1200, 120, new Date(), "Elite Hotel", "LasVegas");
+
+        BookingComAPI bookingComAPI = new BookingComAPI(rooms1);
+        Controller controller = new Controller(new API []{googleAPI, bookingComAPI });
+        Room[] foundRooms = controller.check(googleAPI, bookingComAPI);
+//        for(Room room : foundRooms) {
+//            System.out.println(room.getId());
+//        }
+        foundRooms = controller.requestRooms(30, 5, "Kiev", "Hotel");
+        for(Room room : foundRooms) {
+            System.out.println(room.getId() + " " + room.getPrice());
         }
     }
 }
