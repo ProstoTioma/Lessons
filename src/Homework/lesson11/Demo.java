@@ -56,12 +56,12 @@ public class Demo {
         BookingComAPI bookingComAPI = new BookingComAPI(rooms1);
         Controller controller = new Controller(new API []{googleAPI, bookingComAPI });
         Room[] foundRooms = controller.check(googleAPI, bookingComAPI);
-//        for(Room room : foundRooms) {
-//            System.out.println(room.getId());
-//        }
-        foundRooms = controller.requestRooms(30, 5, "Kiev", "Hotel");
         for(Room room : foundRooms) {
             System.out.println(room.getId() + " " + room.getPrice());
         }
+//        foundRooms = controller.requestRooms(30, 5, "Kiev", "Hotel");
+//        for(Room room : foundRooms) {
+//            System.out.println(room.getId() + " " + room.getPrice());
+//        }
     }
 }

@@ -54,14 +54,6 @@ public class Controller {
                 index++;
             }
         }
-//        int index = 0;
-//        for(Room room : rooms) {
-//            if(api1.getAll() == api2.getAll()) {
-//                res[index] = room;
-//
-//                index++;
-//            }
-//        }
         return result;
     }
 
@@ -75,22 +67,23 @@ public class Controller {
         return false;
     }
 
-    public static int[] check(int[] array1, int[] array2) {
-        int count = 0;
-        for(int el : array1) {
-            if (array1[el] == array2[el]) {
-                count++;
-            }
-        }
-        int[] res = new int[count];
-        int index = 0;
-        for(int el : array1) {
-            if (array1[el] == array2[el]) {
-                res[index] = el;
-                index++;
-            }
-        }
+//     public static int[] check(int[] array1, int[] array2) {
+//        int count = 0;
+//        for(int el : array1) {
+//            if (array1[el] == array2[el]) {
+//                count++;
+//            }
+//        }
+//        int[] res = new int[count];
+//        int index = 0;
+//        for(int el : array1) {
+//            if (array1[el] == array2[el]) {
+//                res[index] = el;
+//                index++;
+//            }
+//        }
+//
+//        return res;
+//    }
 
-        return res;
-    }
 }
