@@ -34,8 +34,8 @@ public class UkrainianBankSystem implements BankSystem {
             return;
         }
 
-        fromUser.setBalance(fromUser.getBalance() - amount + amount * fromUser.getBank().getCommission(amount));
-        toUser.setBalance(toUser.getBalance() + amount + amount * fromUser.getBank().getCommission(amount));
+        fromUser.setBalance(fromUser.getBalance() - amount - amount * fromUser.getBank().getCommission(amount));
+        toUser.setBalance(toUser.getBalance() + amount - amount * fromUser.getBank().getCommission(amount));
     }
 
     @Override
