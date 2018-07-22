@@ -22,32 +22,32 @@ public class Main {
         bankSystem.fund(user, 600);
         bankSystem.withdraw(user, 150);
         bankSystem.paySalary(user);
-        bankSystem.transferMoney(user, user1, 1300);
+        bankSystem.transferMoney(user, user1, 140);
 
         bankSystem.fund(user1, 894);
         bankSystem.withdraw(user1, 413);
         bankSystem.paySalary(user1);
-        bankSystem.transferMoney(user1, user2, 1400);
+        bankSystem.transferMoney(user1, user2, 150);
 
         bankSystem.fund(user2, 590);
         bankSystem.withdraw(user2, 30);
         bankSystem.paySalary(user2);
-        bankSystem.transferMoney(user2, user3, 1500);
+        bankSystem.transferMoney(user2, user3, 160);
 
-        bankSystem.fund(user3, 49903);
-        bankSystem.withdraw(user3, 30000);
+        bankSystem.fund(user3, 493);
+        bankSystem.withdraw(user3, 300);
         bankSystem.paySalary(user3);
-        bankSystem.transferMoney(user3, user4, 1600);
+        bankSystem.transferMoney(user3, user4, 170);
 
-        bankSystem.fund(user4, 2341);
-        bankSystem.withdraw(user4, 2400);
+        bankSystem.fund(user4, 23);
+        bankSystem.withdraw(user4, 24);
         bankSystem.paySalary(user4);
-        bankSystem.transferMoney(user4, user5, 1700);
+        bankSystem.transferMoney(user4, user5, 18);
 
-        bankSystem.fund(user5, 9999);
-        bankSystem.withdraw(user5, 6666);
+        bankSystem.fund(user5, 145);
+        bankSystem.withdraw(user5, 30);
         bankSystem.paySalary(user5);
-        bankSystem.transferMoney(user5, user1, 2000);
+        bankSystem.transferMoney(user5, user1, 10);
 
 
         System.out.println(user.toString());
