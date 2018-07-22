@@ -26,11 +26,13 @@ public class UkrainianBankSystem implements BankSystem {
         //снимаем деньги с fromUser
         //пополняем toUser
 
-        if (!checkWithdraw(fromUser, amount))
+        if (!checkWithdraw(fromUser, amount)) {
             return;
+        }
 
-        if (!checkFund(toUser, amount))
+        if (!checkFund(toUser, amount)) {
             return;
+        }
 
         fromUser.setBalance(fromUser.getBalance() - amount - amount * fromUser.getBank().getCommission(amount));
         toUser.setBalance(toUser.getBalance() + amount);
@@ -57,9 +59,6 @@ public class UkrainianBankSystem implements BankSystem {
     private void printWithdrawalErrorMsg(User user, int amount) {
         System.err.println("Can't withdraw money " + amount + " from user " + user.toString());
     }
-
-
-
 
 
     private boolean checkFund(User user, int amount) {
