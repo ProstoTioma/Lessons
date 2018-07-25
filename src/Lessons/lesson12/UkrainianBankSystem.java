@@ -44,7 +44,7 @@ public class UkrainianBankSystem implements BankSystem {
         if (!checkFund(user, user.getSalary())) {
             return;
         }
-        user.setBalance(user.getBalance() + user.getSalary() - user.getSalary() * user.getBank().getCommission(user.getSalary()));
+        user.setBalance(user.getBalance() + user.getSalary());
     }
 
     private boolean checkWithdraw(User user, int amount) {
