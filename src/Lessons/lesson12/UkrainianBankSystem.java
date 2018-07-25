@@ -41,10 +41,6 @@ public class UkrainianBankSystem implements BankSystem {
 
     @Override
     public void paySalary(User user) {
-        if (!checkWithdraw(user, user.getSalary())) {
-            return;
-        }
-
         if (!checkFund(user, user.getSalary())) {
             return;
         }
