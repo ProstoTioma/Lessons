@@ -1,6 +1,8 @@
 package Homework.lesson11;
 
 
+import java.util.Arrays;
+
 public class BookingComAPI implements API {
     private Room[] rooms;
 
@@ -16,14 +18,14 @@ public class BookingComAPI implements API {
         int count = 0;
 
         for (Room room : rooms) {
-            if (room.getPersons() == persons && room.getPrice() >= price - 100 && room.getPrice() <= price + 100 && room.getCityName() == city && room.getHotelName() == hotel) {
+            if (room != null && room.getPersons() == persons && room.getPrice() >= price - 100 && room.getPrice() <= price + 100 && room.getCityName() == city && room.getHotelName() == hotel) {
                 count++;
             }
         }
         Room[] res = new Room[count];
         int index = 0;
         for(Room room : rooms) {
-            if(room.getPersons() == persons && room.getPrice() >= price - 100 && room.getPrice() <= price + 100 && room.getCityName() == city && room.getHotelName() == hotel) {
+            if(room != null && room.getPersons() == persons && room.getPrice() >= price - 100 && room.getPrice() <= price + 100 && room.getCityName() == city && room.getHotelName() == hotel) {
                 res[index] = room;
                 index++;
             }
@@ -53,5 +55,5 @@ public class BookingComAPI implements API {
         return rooms;
     }
 
-    }
+}
 

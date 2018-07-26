@@ -23,7 +23,7 @@ public class Controller {
 
         for(API api : apis) {
             for(Room tempRoom : api.getAll()) {
-                if(tempRoom.getPersons() == persons && tempRoom.getPrice() == price && tempRoom.getHotelName().equals(hotel)
+                if( tempRoom.getPersons() == persons && tempRoom.getPrice() == price && tempRoom.getHotelName().equals(hotel)
                         && tempRoom.getCityName().equals(city)) {
                     res[index] = tempRoom;
                     index++;
