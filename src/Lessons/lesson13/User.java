@@ -1,4 +1,4 @@
-package Lessons.Lesson13;
+package Lessons.lesson13;
 
 public class User {
     private long id;
