@@ -5,7 +5,7 @@ import java.util.Date;
 public class Demo {
     public static void main(String[] args) {
         //BookingComAPI test
-        System.out.println("BookingComApi test");
+        System.out.println("BookingComAPI test");
         System.out.println();
 
 
