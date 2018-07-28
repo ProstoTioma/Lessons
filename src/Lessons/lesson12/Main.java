@@ -11,9 +11,9 @@ public class Main {
         System.out.println("withdraw");
         System.out.println();
 
-        //снять деньги
-        //снять больше лимита
-        //если нету денег на счету
+        //снять деньги +
+        //снять больше лимита +
+        //если нету денег на счету +
 
 
         BankSystem bankSystem = new UkrainianBankSystem();
@@ -41,8 +41,8 @@ public class Main {
         System.out.println();
 
 
-        //пополнить счет
-        //пополнить больше лимита
+        //пополнить счет +
+        //пополнить больше лимита +
 
 
         User user1 = new User(1323, "Artem", 777333, 120, "ING", 13000, euBank);
@@ -59,9 +59,9 @@ public class Main {
         System.out.println();
 
 
-        //переводем деньги
-        //превышин лимит ввода
-        //когда нету денег на счету у userFrom
+        //переводем деньги +
+        //превышин лимит ввода +
+        //когда нету денег на счету у userFrom +
 
 
         User user2 = new User(138, "Oleg", 90, 3, "UKM", 20000, chinaBank);
@@ -81,8 +81,8 @@ public class Main {
         System.out.println();
 
 
-        //дать зарплату
-        //если зарплата больше лимита
+        //дать зарплату +
+        //если зарплата больше лимита +
 
 
         User user3 = new User(8923, "James", 19000, 14, "WOG", 3000, euBank);
