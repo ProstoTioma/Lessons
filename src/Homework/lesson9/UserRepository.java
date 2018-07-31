@@ -1,12 +1,7 @@
 package Homework.lesson9;
 
 public class UserRepository {
-    public User[] users;
-
-
-    public UserRepository(User[] users) {
-        this.users = users;
-    }
+    public User[] users = new User[10];
 
     public User[] getUsers() {
         return users;
@@ -90,35 +85,56 @@ public class UserRepository {
         if (findById(user.getId()) != null)
             return null;
 
-        for (int index = 0; index < users.length; index++) {
-
-            if (users[index] == null) {
-                users[index] = user;
-                return users[index];
+        int countPlaced = 0;
+        for (User us : users) {
+            if (us != null) {
+                countPlaced++;
             }
-
         }
-        return null;
+        if (countPlaced > 9)
+            return null;
+
+        int index = 0;
+        for (User us : users) {
+            if (us == null) {
+                users[index] = user;
+                break;
+            }
+            index++;
+        }
+        return user;
     }
 
     public User update(User user) {
-        for (int i = 0; i < users.length; i++) {
-            User u = users[i];
-            if (u != null && u.getId() == user.getId()) {
-                users[i] = user;
-                return users[i];
+        if (user == null)
+            return null;
+
+        User curUser = findById(user.getId());
+        if (curUser == null)
+            return null;
+
+        long curUserId = curUser.getId();
+
+        int index = 0;
+        for (User us : users) {
+            if (us != null && us.getId() == curUserId) {
+                users[index] = user;
+                break;
+            }
+            index++;
+        }
+        return user;
+    }
+
+    public User delete(long id) {
+        User user = findById(id);
+
+        int index = 0;
+        for (User us : users) {
+            if (user != null && id == user.getId()) {
+                return user;
             }
         }
         return null;
     }
-
-    public void delete(long id) {
-        for (int i = 0; i < users.length; i++) {
-            User u = users[i];
-            if (u != null && u.getId() == id) {
-                users[i] = null;
-            }
-        }
-    }
-
 }
