@@ -83,7 +83,7 @@ public class UserRepository {
 
     public User findUser(User user) {
         for(User us : users) {
-            if(us.equals(user) && us.hashCode() == user.hashCode()) {
+            if(us != null && us.equals(user) && us.hashCode() == user.hashCode()) {
                 return user;
             }
         }
