@@ -29,7 +29,7 @@ public class UserRepository {
 
         int index = 0;
         for (User us : users) {
-            if (us == null && us.equals(user) && us.hashCode() == user.hashCode()) {
+            if (us == null) {
                 users[index] = user;
                 break;
             }
@@ -50,7 +50,7 @@ public class UserRepository {
 
         int index = 0;
         for (User us : users) {
-            if (us != null && us.getId() == curUserId && us.equals(user) && us.hashCode() == user.hashCode()) {
+            if (us != null && us.getId() == curUserId) {
                 users[index] = user;
                 break;
             }
