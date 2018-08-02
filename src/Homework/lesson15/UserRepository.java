@@ -64,7 +64,7 @@ public class UserRepository {
 
         int index = 0;
         for (User us : users) {
-            if (us.equals(user) && us.hashCode() == user.hashCode()) {
+            if (us != null && us.equals(user) && us.hashCode() == user.hashCode()) {
                 users[index] = null;
                 break;
             }
