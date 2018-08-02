@@ -27,9 +27,11 @@ public class UserRepository {
         if (countPlaced >= users.length)
             return null;
 
+        User findUser = findUser(user);
+
         int index = 0;
         for (User us : users) {
-            if (us == null) {
+            if (us == null && findUser == user) {
                 users[index] = user;
                 break;
             }
@@ -47,10 +49,11 @@ public class UserRepository {
             return null;
 
         long curUserId = curUser.getId();
+        User findUser = findUser(user);
 
         int index = 0;
         for (User us : users) {
-            if (us != null && us.getId() == curUserId) {
+            if (us != null && us.getId() == curUserId && findUser == user) {
                 users[index] = user;
                 break;
             }
@@ -61,10 +64,11 @@ public class UserRepository {
 
     public void delete(long id) {
         User user = findUserById(id);
+        User findUser = findUser(user);
 
         int index = 0;
         for (User us : users) {
-            if (us != null && us.equals(user) && us.hashCode() == user.hashCode()) {
+            if (us != null && id == user.getId() && findUser == user) {
                 users[index] = null;
                 break;
             }
@@ -83,7 +87,7 @@ public class UserRepository {
 
     public User findUser(User user) {
         for (User us : users) {
-            if (us != null && us.equals(user) && us.hashCode() == user.hashCode()) {
+            if (us != null && us.equals(user)) {
                 return user;
             }
         }
