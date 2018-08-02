@@ -1,4 +1,4 @@
-package Homework.lesson15;
+package Homework.lesson15.USER;
 
 public class UserRepository {
     User[] users;
@@ -27,11 +27,9 @@ public class UserRepository {
         if (countPlaced >= users.length)
             return null;
 
-        User findUser = findUser(user);
-
         int index = 0;
         for (User us : users) {
-            if (us == null && findUser == user) {
+            if (us == null && findUser(user).equals(user)) {
                 users[index] = user;
                 break;
             }
@@ -49,11 +47,10 @@ public class UserRepository {
             return null;
 
         long curUserId = curUser.getId();
-        User findUser = findUser(user);
 
         int index = 0;
         for (User us : users) {
-            if (us != null && us.getId() == curUserId && findUser == user) {
+            if (us != null && us.getId() == curUserId && findUser(user).equals(user)) {
                 users[index] = user;
                 break;
             }
@@ -64,11 +61,10 @@ public class UserRepository {
 
     public void delete(long id) {
         User user = findUserById(id);
-        User findUser = findUser(user);
 
         int index = 0;
         for (User us : users) {
-            if (us != null   && findUser == user) {
+            if (us != null && id == user.getId() && findUser(user).equals(user)) {
                 users[index] = null;
                 break;
             }
