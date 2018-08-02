@@ -11,11 +11,11 @@ public class UserRepository {
         return users;
     }
 
-    private User save(User user) {
+    public User save(User user) {
         if (user == null)
             return null;
 
-        if (findById(user.getId()) != null)
+        if (findUser(user.getId()) != null)
             return null;
 
         int countPlaced = 0;
@@ -38,20 +38,11 @@ public class UserRepository {
         return user;
     }
 
-    private User findById(long id) {
-        for (User user : users) {
-            if (user != null && id == user.getId()) {
-                return user;
-            }
-        }
-        return null;
-    }
-
-    private User update(User user) {
+    public User update(User user) {
         if (user == null)
             return null;
 
-        User curUser = findById(user.getId());
+        User curUser = findUser(user.getId());
         if (curUser == null)
             return null;
 
@@ -68,24 +59,26 @@ public class UserRepository {
         return user;
     }
 
-    private User delete(long id) {
-        User user = findById(id);
-
-        if (user == null)
-            return null;
-
-        if (findById(user.getId()) != null)
-            return null;
-
+    public User delete(long id) {
+        User user = findUser(id);
 
         int index = 0;
         for (User us : users) {
-            if (us != null && us.getId() == user.getId()) {
-                users[index] = user;
+            if (us.equals(user)) {
+                users[index] = null;
                 break;
             }
             index++;
         }
         return user;
+    }
+
+    private User findUser(long id) {
+        for (User user : users) {
+            if (user != null && id == user.getId()) {
+                return user;
+            }
+        }
+        return null;
     }
 }

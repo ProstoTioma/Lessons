@@ -3,12 +3,12 @@ package Homework.lesson15;
 public class User {
     private long id;
     private String name;
-    private String sessiondId;
+    private String sessionId;
 
     public User(long id, String name, String sessiondId) {
         this.id = id;
         this.name = name;
-        this.sessiondId = sessiondId;
+        this.sessionId = sessiondId;
     }
 
     public long getId() {
@@ -19,8 +19,8 @@ public class User {
         return name;
     }
 
-    public String getSessiondId() {
-        return sessiondId;
+    public String getSessionId() {
+        return sessionId;
     }
 
     @Override
@@ -32,14 +32,14 @@ public class User {
 
         if (id != user.id) return false;
         if (!name.equals(user.name)) return false;
-        return sessiondId.equals(user.sessiondId);
+        return sessionId.equals(user.sessionId);
     }
 
     @Override
     public int hashCode() {
         int result = (int) (id ^ (id >>> 32));
         result = 31 * result + name.hashCode();
-        result = 31 * result + sessiondId.hashCode();
+        result = 31 * result + sessionId.hashCode();
         return result;
     }
 }
