@@ -77,18 +77,18 @@ public class UserRepository {
         }
     }
 
-    private User findUserById(long id) {
-        for (User user : users) {
-            if (user != null && id == user.getId()) {
+    public User findUser(User user) {
+        for(User us : users) {
+            if(us.equals(user) && us.hashCode() == user.hashCode()) {
                 return user;
             }
         }
         return null;
     }
 
-    private User findUser(User user) {
-        for(User us : users) {
-            if(us.equals(user) && us.hashCode() == user.hashCode()) {
+    private User findUserById(long id) {
+        for (User user : users) {
+            if (user != null && id == user.getId()) {
                 return user;
             }
         }
