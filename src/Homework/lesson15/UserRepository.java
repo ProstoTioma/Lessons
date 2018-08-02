@@ -24,12 +24,12 @@ public class UserRepository {
                 countPlaced++;
             }
         }
-        if (countPlaced > 9)
+        if (countPlaced >= users.length)
             return null;
 
         int index = 0;
         for (User us : users) {
-            if (us == null) {
+            if (us == null && us.equals(user) && us.hashCode() == user.hashCode()) {
                 users[index] = user;
                 break;
             }
@@ -50,7 +50,7 @@ public class UserRepository {
 
         int index = 0;
         for (User us : users) {
-            if (us != null && us.getId() == curUserId) {
+            if (us != null && us.getId() == curUserId && us.equals(user) && us.hashCode() == user.hashCode()) {
                 users[index] = user;
                 break;
             }
@@ -82,8 +82,8 @@ public class UserRepository {
     }
 
     public User findUser(User user) {
-        for(User us : users) {
-            if(us != null && us.equals(user) && us.hashCode() == user.hashCode()) {
+        for (User us : users) {
+            if (us != null && us.equals(user) && us.hashCode() == user.hashCode()) {
                 return user;
             }
         }
