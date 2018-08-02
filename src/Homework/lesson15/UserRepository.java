@@ -15,7 +15,7 @@ public class UserRepository {
         if (user == null)
             return null;
 
-        if (findUser(user.getId()) != null)
+        if (findUserById(user.getId()) != null)
             return null;
 
         int countPlaced = 0;
@@ -30,7 +30,7 @@ public class UserRepository {
         int index = 0;
         for (User us : users) {
             if (us == null) {
-                users[index].equals(user);
+                users[index] = user;
                 break;
             }
             index++;
@@ -42,7 +42,7 @@ public class UserRepository {
         if (user == null)
             return null;
 
-        User curUser = findUser(user.getId());
+        User curUser = findUserById(user.getId());
         if (curUser == null)
             return null;
 
@@ -59,21 +59,20 @@ public class UserRepository {
         return user;
     }
 
-    public User delete(long id) {
-        User user = findUser(id);
+    public void delete(long id) {
+        User user = findUserById(id);
 
         int index = 0;
         for (User us : users) {
-            if (us.equals(user)) {
+            if (us.equals(user) && us.hashCode() == user.hashCode()) {
                 users[index] = null;
                 break;
             }
             index++;
         }
-        return user;
     }
 
-    private User findUser(long id) {
+    private User findUserById(long id) {
         for (User user : users) {
             if (user != null && id == user.getId()) {
                 return user;
