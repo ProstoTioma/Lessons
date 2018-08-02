@@ -15,8 +15,11 @@ public class UserRepository {
         if (user == null)
             return null;
 
-        if (findUserById(user.getId()) != null)
+//        if (findUserById(user.getId()) != null)
+//            return null;
+        if(findUser(user) != null)
             return null;
+
 
         int countPlaced = 0;
         for (User us : users) {
@@ -42,7 +45,9 @@ public class UserRepository {
         if (user == null)
             return null;
 
-        User curUser = findUserById(user.getId());
+//        User curUser = findUserById(user.getId());
+        User curUser = findUser(user);
+
         if (curUser == null)
             return null;
 
@@ -75,6 +80,15 @@ public class UserRepository {
     private User findUserById(long id) {
         for (User user : users) {
             if (user != null && id == user.getId()) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    private User findUser(User user) {
+        for(User us : users) {
+            if(us.equals(user) && us.hashCode() == user.hashCode()) {
                 return user;
             }
         }
