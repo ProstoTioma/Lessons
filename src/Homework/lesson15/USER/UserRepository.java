@@ -29,7 +29,7 @@ public class UserRepository {
 
         int index = 0;
         for (User us : users) {
-            if (us == null && findUser(user).equals(user)) {
+            if (us == null) {
                 users[index] = user;
                 break;
             }
