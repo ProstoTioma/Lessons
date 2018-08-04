@@ -50,7 +50,7 @@ public class UserRepository {
 
         int index = 0;
         for (User us : users) {
-            if (us != null && us.getId() == curUserId && user != null && user.getId() == us.getId() && findUser(user).equals(us)) {
+            if (us != null && us.getId() == curUserId && user != null && user.getId() == curUserId && findUser(user).equals(us)) {
                 users[index] = user;
                 break;
             }
