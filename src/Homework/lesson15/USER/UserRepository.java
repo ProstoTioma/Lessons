@@ -46,11 +46,11 @@ public class UserRepository {
             return null;
         }
 
-//        User curUser = findUserById(user.getId());
+        User curUser = findUserById(user.getId());
 //        if (curUser == null)
 //            return null;
 
-        long curUserId = findUserById(user.getId()).getId();
+        long curUserId = curUser.getId();
 
         int index = 0;
         for (User us : users) {
