@@ -42,15 +42,15 @@ public class UserRepository {
         if (user == null)
             return null;
 
+        if(findUser(user) == null) {
+            return null;
+        }
+
         User curUser = findUserById(user.getId());
         if (curUser == null)
             return null;
 
         long curUserId = curUser.getId();
-
-        if(findUser(user) == null) {
-            return null;
-        }
 
         int index = 0;
         for (User us : users) {
