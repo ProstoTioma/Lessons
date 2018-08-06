@@ -38,23 +38,16 @@ public class UserRepository {
         return user;
     }
 
-    public User update(User user) {
-        if (user == null)
-            return null;
-
-        if(findUser(user) == null) {
-            return null;
-        }
-
-        int index = 0;
-        for (User us : users) {
-            if (us != null) {
-                users[index] = user;
-                break;
+    public User update(User u) {
+        if(users != null) {
+            for (int i = 0; i < users.length; i++) {
+                if (users[i] != null && users[i].getId() == u.getId()) {
+                    users[i] = u;
+                    return u;
+                }
             }
-            index++;
         }
-        return user;
+        return null;
     }
 
     public void delete(long id) {
